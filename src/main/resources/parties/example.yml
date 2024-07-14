@@ -1,0 +1,20 @@
+drop-stack: true
+drop-order: SEQUENTIAL
+fireworks: false
+effects: VILLAGER_HAPPY
+effects-count: 10
+delay: 1
+expires: true
+expiry-time: 600
+per-player-limit: false
+limit-amount: 1
+min-players: 0
+sound-type: ENTITY_FIREWORK_ROCKET_LAUNCH
+broadcast: true
+per-item-message: true
+items:
+  '1':
+    - ==: org.bukkit.inventory.ItemStack
+      type: DIRT
+      amount: 64
+locations: []

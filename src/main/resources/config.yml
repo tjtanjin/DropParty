@@ -1,0 +1,77 @@
+#####################################################################################
+#                                                                                   #
+#                              General Configurations                               #
+#                                                                                   #
+#####################################################################################
+
+# an elaborate tutorial and setup guide can be found on our wiki:
+# https://github.com/tjtanjin/DropParty/wiki
+
+# language file to use (feel free to add your own lang file within the lang folder)
+lang-file: en.yml
+
+# types of drops enabled, disabling unused features may boost performance
+location-drop-enabled: true
+player-drop-enabled: true
+
+#####################################################################################
+#                                                                                   #
+#                          Sound & Particles Configurations                         #
+#                                                                                   #
+#####################################################################################
+
+# sound to play when party drops (set to NONE for no sound)
+drop-sound: ENTITY_PLAYER_LEVELUP
+
+# list of available sound to choose from in party gui, you may add more options from here:
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+# note: make sure you reference the correct api version according to your jar version
+sound-types:
+  - ENTITY_FIREWORK_ROCKET_LAUNCH
+
+# list of available effects to choose from in party gui, you may add more options from here:
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+# note: make sure you reference the correct api version according to your jar version
+effects:
+  - VILLAGER_HAPPY
+
+#####################################################################################
+#                                                                                   #
+#                             Miscellaneous Configurations                          #
+#                                                                                   #
+#####################################################################################
+
+# number of inventory pages in menu
+max-inv-pages: 10
+
+# number of parties to show on each page of /dp list command
+parties-per-page: 10
+
+#####################################################################################
+#                                                                                   #
+#                          DropPartyFiesta Options (Premium)                        #
+#                                                                                   #
+#####################################################################################
+# the following options are only available with DropPartyFiesta: https://www.spigotmc.org/resources/droppartyfiesta.113746/
+# if you're intending to migrate to the premium version, check the migration guide here: {TODO}
+
+# types of drops enabled, disabling unused features may boost performance
+mob-drop-enabled: true
+chat-drop-enabled: true
+inventory-drop-enabled: true
+
+# whether to show bossbar which represents latest progress of drop party
+# works only on 1.9+ and ignored for inventory drops
+show-boss-bar: true
+
+# both boss bar settings below are ignored if show-boss-bar is false
+# if multiple colors are specified, the boss bar cycles through them on each update
+# refer to available bar colors here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html
+boss-bar-colors: ["PURPLE", "PINK", "RED", "YELLOW", "GREEN", "BLUE"]
+# you may use %party% or %party_display_name% as placeholders for the title
+boss-bar-title: "&aDrop Party: %party_display_name%"
+
+# effect to show when toggling points for visual aid, choose from here:
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+# note: make sure you reference the correct api version according to your jar version
+points-particle: SOUL_FIRE_FLAME

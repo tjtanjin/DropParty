@@ -1,0 +1,63 @@
+name: DropParty
+version: ${project.version}
+main: tk.taverncraft.dropparty.Main
+author: tjtanjin - FrozenFever
+description: The one and only drop party plugin you need to have a blast!
+api-version: 1.13
+commands:
+  dropparty:
+    description: Base command for the plugin
+    aliases: [dp]
+permissions:
+  dp.*:
+    description: Gives access to all commands
+    children:
+      dp.create: true
+      dp.edit: true
+      dp.delete: true
+      dp.clone: true
+      dp.list: true
+      dp.help: true
+      dp.reload: true
+      dp.throw.*: true
+      dp.stop: true
+    default: op
+  dp.create:
+    description: Allows players to use the /dp create command
+    default: op
+  dp.edit:
+    description: Allows players to use the /dp edit command
+    default: op
+  dp.delete:
+    description: Allows players to use the /dp delete command
+    default: op
+  dp.clone:
+    description: Allows players to use the /dp clone command
+    default: op
+  dp.list:
+    description: Allows players to use the /dp list command
+    default: op
+  dp.setdisplayname:
+    description: Allows players to use the /dp setdisplayname command
+    default: op
+  dp.help:
+    description: Allows players to use the /dp help command
+    default: op
+  dp.reload:
+    description: Allows players to use the /dp reload command
+    default: op
+  dp.throw.*:
+    description: Gives access to all throw commands
+    children:
+      dp.throw.chat: true
+      dp.throw.inventory: true
+    default: op
+  dp.throw.chat:
+    description: Allows players to use the /dp throw chat command
+    default: op
+  dp.throw.inventory:
+    description: Allows players to use the /dp throw inventory command
+    default: op
+  dp.stop:
+    description: Allows players to use the /dp stop command
+    default: op

@@ -1,0 +1,332 @@
+# details for menu customisation as well as more templates may be found on our wiki:
+# https://github.com/tjtanjin/DropParty/wiki/Tutorial#gui-customisation
+
+#####################################################################################
+#                                                                                   #
+#                                 Page Configurations                               #
+#                                                                                   #
+#####################################################################################
+# title for party menu (color code not supported here)
+title: "%party%"
+
+# size of menu, must be multiple of 9 (other values will be rounded up)
+size: 54
+
+# buttons for navigating items or adjusting party settings
+buttons:
+  drop-stack:
+    slot: 0
+    name: "&bDrop Stack"
+    lore:
+      - "&eValue: &a%dropstack%"
+      - ""
+      - "&6Drops items in stacks."
+      - ""
+      - "&9Click &eto toggle"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: HAY_BLOCK
+    enchanted: false
+
+  drop-order:
+    slot: 1
+    name: "&bDrop Order"
+    lore:
+      - "&eValue: &a%droporder%"
+      - ""
+      - "&6Order to throw items:"
+      - "&aSEQUENTIAL | RANDOM"
+      - ""
+      - "&9Left click &efor next choice"
+      - "&9Right click &efor previous choice"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: BOOK
+    enchanted: false
+
+  fireworks:
+    slot: 2
+    name: "&bFireworks"
+    lore:
+      - "&eValue: &a%fireworks%"
+      - ""
+      - "&6Shoot fireworks when throwing."
+      - ""
+      - "&9Click &eto toggle"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: DISPENSER
+    enchanted: false
+
+  effects:
+    slot: 3
+    name: "&bParticle Effects"
+    lore:
+      - "&eValue: &a%effects%"
+      - ""
+      - "&6Choice of effect to show when"
+      - "&6throwing items, set possible"
+      - "&6choices in config.yml."
+      - ""
+      - "&9Left click &efor next choice"
+      - "&9Right click &efor previous choice"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: BLAZE_POWDER
+    enchanted: false
+
+  effects-count:
+    slot: 9
+    name: "&bEffects Count"
+    lore:
+      - "&eValue: &a%effectscount%"
+      - ""
+      - "&6Number of particles to show."
+      - ""
+      - "&9Left click &eto increase"
+      - "&9Right click &eto decrease"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: STICK
+    enchanted: false
+
+  delay:
+    slot: 10
+    name: "&bDelay"
+    lore:
+      - "&eValue: &a%delay%"
+      - ""
+      - "&6Delay (in seconds) before"
+      - "&6throwing items."
+      - ""
+      - "&9Left click &eto increase"
+      - "&9Right click &eto decrease"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: WATCH
+    enchanted: false
+
+  expires:
+    slot: 11
+    name: "&bExpires"
+    lore:
+      - "&eValue: &a%expires%"
+      - ""
+      - "&6Whether to expire the"
+      - "&6drop party after a"
+      - "&6period of time"
+      - ""
+      - "&9Click &eto toggle"
+      - ""
+      - "&5Applies to:"
+      - "&dChat"
+    material: DEAD_BUSH
+    enchanted: false
+
+  expiry-time:
+    slot: 12
+    name: "&bExpiry Time"
+    lore:
+      - "&eValue: &a%expirytime%"
+      - ""
+      - "&6Time (in seconds) to host"
+      - "&6the drop party before it"
+      - "&6expires, used when expires"
+      - "&6is true"
+      - ""
+      - "&9Left click &eto increase"
+      - "&9Right click &eto decrease"
+      - ""
+      - "&5Applies to:"
+      - "&dChat"
+    material: SKULL_ITEM
+    enchanted: false
+
+  per-player-limit:
+    slot: 18
+    name: "&bPer-Player Limit"
+    lore:
+      - "&eValue: &a%perplayerlimit%"
+      - ""
+      - "&6Whether to limit the amount"
+      - "&6of items a player can get"
+      - "&6in a drop party."
+      - ""
+      - "&9Click &eto toggle"
+      - ""
+      - "&5Applies to:"
+      - "&dChat | Inventory"
+    material: CHEST
+    enchanted: false
+
+  limit-amount:
+    slot: 19
+    name: "&bLimit Amount"
+    lore:
+      - "&eValue: &a%limitamount%"
+      - ""
+      - "&6Limit to the number of items"
+      - "&6collected by each player in"
+      - "&6a single drop party, used"
+      - "&6when per-player limit is true"
+      - ""
+      - "&9Left click &eto increase"
+      - "&9Right click &eto decrease"
+      - ""
+      - "&5Applies to:"
+      - "&dChat | Inventory"
+    material: WHEAT
+    enchanted: false
+
+  min-players:
+    slot: 20
+    name: "&bMin Players"
+    lore:
+      - "&eValue: &a%minplayers%"
+      - ""
+      - "&6Min number of players required."
+      - ""
+      - "&9Left click &eto increase"
+      - "&9Right click &eto decrease"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: DRAGON_EGG
+    enchanted: false
+
+  sound-type:
+    slot: 21
+    name: "&bSound"
+    lore:
+      - "&eValue: &a%soundtype%"
+      - ""
+      - "&6Choice of sound to play, set"
+      - "&6possible choices in config.yml."
+      - ""
+      - "&9Left click &efor next choice"
+      - "&9Right click &efor previous choice"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: JUKEBOX
+    enchanted: false
+
+  broadcast:
+    slot: 27
+    name: "&bBroadcast"
+    lore:
+      - "&eValue: &a%broadcast%"
+      - ""
+      - "&6Whether to broadcast drop"
+      - "&6party in the chat."
+      - ""
+      - "&9Click &eto toggle"
+      - ""
+      - "&5Applies to:"
+      - "&dAll"
+    material: BANNER
+    enchanted: false
+
+  per-item-message:
+    slot: 28
+    name: "&bPer-Item Message"
+    lore:
+      - "&eValue: &a%peritemmessage%"
+      - ""
+      - "&6Whether to send message to"
+      - "&6player on every item collection."
+      - ""
+      - "&9Click &eto toggle"
+      - ""
+      - "&5Applies to:"
+      - "&dChat | Inventory"
+    material: PAPER
+    enchanted: false
+
+  previous-page:
+    slot: 50
+    name: "&bPrevious Page"
+    lore:
+      - "&eGo to Page &b%page%"
+    material: ARROW
+    enchanted: false
+
+  summary:
+    slot: 51
+    name: "&bSummary"
+    lore:
+      - "&eDrop Stack: &a%dropstack%"
+      - "&eDrop Order: &a%droporder%"
+      - "&eFireworks: &a%fireworks%"
+      - "&eEffects: &a%effects%"
+      - "&eEffects Count: &a%effectscount%"
+      - "&eDelay: &a%delay%"
+      - "&eExpires: &a%expires%"
+      - "&eExpiry Time: &a%expirytime%"
+      - "&ePer-Player Limit: &a%perplayerlimit%"
+      - "&eLimit Amount: &a%limitamount%"
+      - "&eMin Players: &a%minplayers%"
+      - "&eSound Type: &a%soundtype%"
+      - "&eBroadcast: &a%broadcast%"
+      - "&ePer-Item Message: &a%peritemmessage%"
+    material: COMPASS
+    enchanted: false
+
+  save:
+    slot: 52
+    name: "&bSave"
+    lore:
+      - "&eSave changes"
+      - ""
+      - "&cNote: Close the inventory to"
+      - "&ccancel your changes made."
+    material: EMERALD
+    enchanted: false
+
+  next-page:
+    slot: 53
+    name: "&bNext Page"
+    lore:
+      - "&eGo to Page &b%page%"
+    material: ARROW
+    enchanted: false
+
+# layout and slots to use for showing items in menu
+items:
+  slots:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 14
+    - 15
+    - 16
+    - 17
+    - 23
+    - 24
+    - 25
+    - 26
+    - 32
+    - 33
+    - 34
+    - 35
+
+# background for menu
+background:
+  4: BARRIER
+  13: BARRIER
+  22: BARRIER
+  31: BARRIER
+  40: BARRIER
+  49: BARRIER
+  41: BARRIER
+  42: BARRIER
+  43: BARRIER
+  44: BARRIER
+  50: BARRIER

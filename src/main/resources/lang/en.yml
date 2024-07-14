@@ -1,0 +1,70 @@
+# plugin prefix
+prefix: '&6[&bDropParty&6] '
+
+# messages that support placeholders have them listed as comments on the right of the message
+# hexadeciaml color codes are also supported (e.g. #ff0000, #00ff00)
+# if you need # in your string but not as a color code, escape it with \ (e.g. \#hashtag)
+
+# general messages
+reload-success: '&aDropParty has been reloaded!'
+reload-fail: '&cFailed to load config/message files. Check console for errors and double check your config or contact the author if you believe this to be an error.'
+invalid-command: '&cInvalid command, type &6/dp help&c!'
+no-permission: '&cYou do not have the permission to run this command!'
+player-only-command: '&cThis command may only be executed by an in-game player!'
+unexpected-error: '&cAn unexpected error has occurred, please contact the plugin author.'
+premium-feature: '&cFeature Available on DropPartyFiesta: &6https://www.spigotmc.org/resources/droppartyfiesta.113746/'
+
+# party messages
+party-not-exist: '&cThe party &6%party% &cdoes not exist!' # %party%
+party-exist: '&cThe party &6%party% &calready exists!' # %party%
+party-not-ongoing: '&cThere is currently no drop party for &6%party%&c!' # %party%
+party-clone-success: '&aParty &6%newparty% &acloned successfully from &6%oldparty%&a!' # %newparty%, %oldparty%
+save-party-changes: '&aChanges to &6%party% &ahave been saved!' # %party%
+cancel-party-changes: '&cChanges to &6%party% &chave been cancelled!' # %party%
+party-deleted: '&aThe party &6%party% &ahas been deleted!' # %party%
+not-enough-min-players: '&cNot enough minimum players to throw drop party!' # %party%
+player-not-online: '&cThe player &b%player% &cis not online!' # %player%
+set-display-name-success: '&aSuccessfully set display name to %party_display_name% &afor &6%party%&a!' # %party%, # %party_display_name%
+set-display-name-fail: '&cFailed to set display name to %party_display_name% &cfor &6%party%&c!' # %party%, # %party_display_name%
+chat-party-delay: '&aA &b%party_display_name% &adrop party is starting in chat in &6%delay% &aseconds!' # %party%, %delay%, %party_display_name%
+chat-party-thrown: '&aA &b%party_display_name% &adrop party has been thrown in chat!' # %party%, %party_display_name%
+chat-drop-message: '&e[&aClick To Collect&e]'
+chat-item-received: '&b%player% &areceived &6%item% &afrom the chat drop party!' # %player%, %item%
+chat-collection-limit-reached: '&cYou have reached the collection limit!'
+inventory-party-delay: '&aA &b%party_display_name% &adrop party is dropping into player inventories in &6%delay% &aseconds!' # %party%, %delay%, %party_display_name%
+inventory-party-thrown: '&aA &b%party_display_name% &adrop party has been thrown into online player inventories!' # %party%, %party_display_name%
+inventory-item-received: '&aYou received &6%item% &afrom the inventory drop party!' # %item%
+all-party-stopped: '&aStopped all drop parties!'
+party-stopped: '&aThe &b%party% &adrop party has been stopped!' # %party%
+legacy-version-limitation: "&cThis feature is only available in versions 1.12+!"
+
+# format for help command
+help-header: '&b----- &6Commands &b-----'
+
+help-body: |
+  &b----- &6Commands &b-----
+  &a/dp list &b- list all drop parties
+  &a/dp create <party> &b- create a new drop party
+  &a/dp edit <party> &b- edit a drop party
+  &a/dp delete <party> &b- delete a drop party
+  &a/dp clone <party> <cloned party> &b- clone a drop party
+  &a/dp throw chat <party> &b- throw party via clickable text in chat
+  &a/dp throw inventory <party> &b- throw party into player inventories
+  &a/dp stop <party> &b- stops an ongoing drop party
+  &a/dp help &b- view the list of commands
+  &a/dp reload &b- reload the plugin (will stop all ongoing parties)
+
+# %page% is the next page number
+help-footer: '&6Type &e/dp help %page% &6to view next page'
+
+# format for party list
+party-list-header: |
+  &b----- &aDrop Party List &b-----
+
+# %party%
+party-list-body: |
+  &e- %party%
+
+# %page% is the next page number
+party-list-footer: |
+  &6Type &e/dp list %page% &6to view next page
