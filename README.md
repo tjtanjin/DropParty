@@ -22,7 +22,7 @@ parties. This is the lite version of [**DropPartyFiesta**](https://www.spigotmc.
 features. With the lite version, you can access the following features:You may download the plugin via the following links:
 
 - [Modrinth](https://modrinth.com/plugin/dropparty)
-- [Spigot](https://www.spigotmc.org/resources/dropparty/)
+- [Spigot](https://www.spigotmc.org/resources/dropparty.118050/)
 
 ### Features
 <p align="center">
@@ -42,8 +42,10 @@ Some key features provided by this lite version plugin are listed below:
 
 The features above are just a glimpse of what the plugin is capable of. More detailed guides and 
 example setups can be found in our **[wiki](https://github.com/tjtanjin/DropParty/wiki)**. You may
-also refer to the table below for a comparison between the lite (DropParty) and premium 
-(DropPartyFiesta) version of the plugin:
+also refer to the table below for a comparison between the lite ([**DropParty**](https://www.spigotmc.org/resources/dropparty.118050/)) and premium 
+([**DropPartyFiesta**](https://www.spigotmc.org/resources/droppartyfiesta.113746/)) version of the plugin:
+
+![drop-party-comparison](https://github.com/user-attachments/assets/23c57104-1c78-4628-b02b-19c1ec475280)
 
 
 ### Technologies
