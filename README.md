@@ -85,9 +85,5 @@ If you have code to contribute to the project, open a pull request from your for
 clearly the changes and what they are intended to do (enhancement, bug fixes etc). Alternatively,
 you may simply raise bugs or suggestions by opening an issue.
 
-Note that as this was my first minecraft plugin, the structure of the codebase leaves more to be
-desired. My plan to rewrite the plugin for version 2.0.0 is delayed indefinitely until I am able to
-free up more time (or until a volunteer comes along :stuck_out_tongue_closed_eyes:)
-
 ### Others
 For any questions regarding the project, please reach out for support via **[discord](https://discord.gg/X8VSdZvBQY).**
