@@ -330,3 +330,7 @@ background:
   43: BLUE_STAINED_GLASS_PANE
   44: BLUE_STAINED_GLASS_PANE
   50: BLUE_STAINED_GLASS_PANE
+
+# this placeholder is used to fill up remaining empty spaces that are not specified as item slots
+# in the menu, which is necessary to preserve proper shift + click behavior
+default-placeholder: LIGHT_GRAY_STAINED_GLASS_PANE

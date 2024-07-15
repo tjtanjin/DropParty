@@ -330,3 +330,7 @@ background:
   43: BARRIER
   44: BARRIER
   50: BARRIER
+
+# this placeholder is used to fill up remaining empty spaces that are not specified as item slots
+# in the menu, which is necessary to preserve proper shift + click behavior
+default-placeholder: STAINED_GLASS_PANE

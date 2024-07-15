@@ -3,6 +3,7 @@ package tk.taverncraft.dropparty.gui;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -49,6 +50,8 @@ public class GuiUtils {
         // Set the name of the item
         if (name != null) {
             meta.setDisplayName(StringUtils.formatStringColor(name));
+        } else {
+            meta.setDisplayName(ChatColor.RESET + "");
         }
 
         // Set the lore of the item

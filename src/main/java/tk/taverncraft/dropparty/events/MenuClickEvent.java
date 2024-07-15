@@ -1,5 +1,7 @@
 package tk.taverncraft.dropparty.events;
 
+import java.util.Arrays;
+
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -7,12 +9,11 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+
 import tk.taverncraft.dropparty.Main;
 import tk.taverncraft.dropparty.gui.options.PartyMenuOptions;
 import tk.taverncraft.dropparty.messages.MessageManager;
 import tk.taverncraft.dropparty.party.Party;
-
-import java.util.Arrays;
 
 /**
  * MenuClickEvent checks for when a player clicks on GUI menu.

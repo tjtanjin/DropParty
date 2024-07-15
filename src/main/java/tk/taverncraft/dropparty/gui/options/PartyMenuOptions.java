@@ -1,9 +1,13 @@
 package tk.taverncraft.dropparty.gui.options;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -41,6 +45,12 @@ public class PartyMenuOptions {
     // sub page items
     private final List<Integer> subPageItemSlots;
 
+    // default placeholder item used to fill up empty spaces
+    private ItemStack defaultPlaceholder;
+
+    // placeholder slots
+    private List<Integer> placeholderSlots;
+
     /**
      * Constructor for PartyMenuOptions.
      *
@@ -53,11 +63,32 @@ public class PartyMenuOptions {
 
         setUpMenuBackground(config);
         subPageItemSlots = config.getIntegerList("items.slots");
-
         for (String key: config.getConfigurationSection("buttons")
                 .getKeys(false)) {
             setUpButton(config, key);
         }
+        setUpPlaceholders(config);
+    }
+
+    /**
+     * Sets up the default placeholders.
+     */
+    private void setUpPlaceholders(FileConfiguration config) {
+        // create placeholder item
+        Material material = Material.valueOf(config.getString("default-placeholder", "LIGHT_GRAY_STAINED_GLASS_PANE"));
+        defaultPlaceholder = GuiUtils.createGuiItem(material, "&cUnlock More Premium Features!",
+            false, "&eVisit: &6DropPartyFiesta");
+
+        // determine all non item slots
+        Set<Integer> reservedSlots = new HashSet<>();
+        reservedSlots.addAll(subPageItemSlots);
+        reservedSlots.addAll(subPageButtons.keySet());
+        reservedSlots.addAll(subPageBackground.keySet());
+
+        placeholderSlots = IntStream.range(0, size)
+            .boxed()
+            .filter(slot -> !reservedSlots.contains(slot))
+            .collect(Collectors.toList());
     }
 
     /**
@@ -70,7 +101,7 @@ public class PartyMenuOptions {
             .getKeys(false)) {
             int slot = Integer.parseInt(key);
             Material material = Material.valueOf(config.getString("background." + key));
-            ItemStack itemStack = GuiUtils.createGuiItem(material, "", false, null);
+            ItemStack itemStack = GuiUtils.createGuiItem(material, null, false, null);
             subPageBackground.put(slot, itemStack);
         }
     }
@@ -139,6 +170,10 @@ public class PartyMenuOptions {
         inv = Bukkit.createInventory(null, size, pageNumPrefix +
             GuiUtils.parseName(title, "%party%", party.getName()));
 
+        // pre-fill up whole inventory gui with default placeholder
+        for (int nonItemSlot : placeholderSlots) {
+            inv.setItem(nonItemSlot, defaultPlaceholder);
+        }
 
         for (Map.Entry<Integer, ItemStack> map : subPageBackground.entrySet()) {
             inv.setItem(map.getKey(), map.getValue());
