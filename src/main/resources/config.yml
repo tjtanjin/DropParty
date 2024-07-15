@@ -75,3 +75,25 @@ boss-bar-title: "&aDrop Party: %party_display_name%"
 # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
 # note: make sure you reference the correct api version according to your jar version
 points-particle: SOUL_FIRE_FLAME
+
+# specify groups of drop parties that can be selected from for random drop parties
+# invalid drops (e.g. non-existent parties) will be ignored and a warning will show up in console
+# use the %random_player% placeholder for a random online player (example shown in random2 below)
+# each drop is specified in the following format:
+# <drop_name>:
+#   - <throw_type>;<optional mob/player>;<party_name>
+# tutorial link: https://github.com/tjtanjin/DropPartyFiesta/wiki/Tutorial#random-drop-configurations
+random-drops:
+  random1:
+    drops:
+      - mob;cow;example
+      - mob;pig;example
+      - mob;sheep;example
+  random2:
+    drops:
+      - player;%random_player%;example
+      - location;example
+  random3:
+    drops:
+      - chat;example
+      - inventory;example
