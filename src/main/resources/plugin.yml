@@ -17,6 +17,7 @@ permissions:
       dp.delete: true
       dp.clone: true
       dp.list: true
+      dp.setdisplayname: true
       dp.help: true
       dp.reload: true
       dp.throw.*: true
