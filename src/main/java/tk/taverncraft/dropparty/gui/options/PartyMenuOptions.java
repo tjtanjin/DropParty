@@ -34,16 +34,16 @@ public class PartyMenuOptions {
     private final String title;
 
     // button slots for use in inventory click events
-    private final HashMap<String, Integer> subButtonSlots = new HashMap<>();
+    private final HashMap<String, Integer> buttonSlots = new HashMap<>();
 
     // button items
-    private final HashMap<Integer, ItemStack> subPageButtons = new HashMap<>();
+    private final HashMap<Integer, ItemStack> pageButtons = new HashMap<>();
 
     // backgrounds
-    private final HashMap<Integer, ItemStack> subPageBackground = new HashMap<>();
+    private final HashMap<Integer, ItemStack> pageBackground = new HashMap<>();
 
-    // sub page items
-    private final List<Integer> subPageItemSlots;
+    // page item slots
+    private final List<Integer> pageItemSlots;
 
     // default placeholder item used to fill up empty spaces
     private ItemStack defaultPlaceholder;
@@ -62,7 +62,7 @@ public class PartyMenuOptions {
         title = config.getString("title") + pageIdentifier;
 
         setUpMenuBackground(config);
-        subPageItemSlots = config.getIntegerList("items.slots");
+        pageItemSlots = config.getIntegerList("items.slots");
         for (String key: config.getConfigurationSection("buttons")
                 .getKeys(false)) {
             setUpButton(config, key);
@@ -81,9 +81,9 @@ public class PartyMenuOptions {
 
         // determine all non item slots
         Set<Integer> reservedSlots = new HashSet<>();
-        reservedSlots.addAll(subPageItemSlots);
-        reservedSlots.addAll(subPageButtons.keySet());
-        reservedSlots.addAll(subPageBackground.keySet());
+        reservedSlots.addAll(pageItemSlots);
+        reservedSlots.addAll(pageButtons.keySet());
+        reservedSlots.addAll(pageBackground.keySet());
 
         placeholderSlots = IntStream.range(0, size)
             .boxed()
@@ -102,7 +102,7 @@ public class PartyMenuOptions {
             int slot = Integer.parseInt(key);
             Material material = Material.valueOf(config.getString("background." + key));
             ItemStack itemStack = GuiUtils.createGuiItem(material, null, false, null);
-            subPageBackground.put(slot, itemStack);
+            pageBackground.put(slot, itemStack);
         }
     }
 
@@ -123,8 +123,8 @@ public class PartyMenuOptions {
 
         ItemStack itemStack = GuiUtils.createGuiItem(material, name, isEnchanted,
                 lore.toArray(new String[0]));
-        subPageButtons.put(slot, itemStack);
-        subButtonSlots.put(button, slot);
+        pageButtons.put(slot, itemStack);
+        buttonSlots.put(button, slot);
     }
 
     /**
@@ -148,7 +148,7 @@ public class PartyMenuOptions {
 
         int counter = 0;
         for (ItemStack item: items) {
-            int slot = subPageItemSlots.get(counter);
+            int slot = pageItemSlots.get(counter);
             entityView.setItem(slot, item);
             counter++;
         }
@@ -175,11 +175,11 @@ public class PartyMenuOptions {
             inv.setItem(nonItemSlot, defaultPlaceholder);
         }
 
-        for (Map.Entry<Integer, ItemStack> map : subPageBackground.entrySet()) {
+        for (Map.Entry<Integer, ItemStack> map : pageBackground.entrySet()) {
             inv.setItem(map.getKey(), map.getValue());
         }
 
-        for (Map.Entry<Integer, ItemStack> map : subPageButtons.entrySet()) {
+        for (Map.Entry<Integer, ItemStack> map : pageButtons.entrySet()) {
             int slot = map.getKey();
             if (pageNum == 1 && slot == getPrevPageSlot()) {
                 continue;
@@ -315,74 +315,74 @@ public class PartyMenuOptions {
     // getters below are for information used in handling of inventory click events
 
     public int getNextPageSlot() {
-        return Optional.ofNullable(subButtonSlots.get("next-page")).orElse(53);
+        return Optional.ofNullable(buttonSlots.get("next-page")).orElse(53);
     }
 
     public int getPrevPageSlot() {
-        return Optional.ofNullable(subButtonSlots.get("previous-page")).orElse(50);
+        return Optional.ofNullable(buttonSlots.get("previous-page")).orElse(50);
     }
 
     public int getDropStackSlot() {
-        return Optional.ofNullable(subButtonSlots.get("drop-stack")).orElse(2);
+        return Optional.ofNullable(buttonSlots.get("drop-stack")).orElse(2);
     }
 
     public int getDropOrderSlot() {
-        return Optional.ofNullable(subButtonSlots.get("drop-order")).orElse(3);
+        return Optional.ofNullable(buttonSlots.get("drop-order")).orElse(3);
     }
 
     public int getFireworksSlot() {
-        return Optional.ofNullable(subButtonSlots.get("fireworks")).orElse(18);
+        return Optional.ofNullable(buttonSlots.get("fireworks")).orElse(18);
     }
 
     public int getEffectsSlot() {
-        return Optional.ofNullable(subButtonSlots.get("effects")).orElse(19);
+        return Optional.ofNullable(buttonSlots.get("effects")).orElse(19);
     }
 
     public int getEffectsCountSlot() {
-        return Optional.ofNullable(subButtonSlots.get("effects-count")).orElse(20);
+        return Optional.ofNullable(buttonSlots.get("effects-count")).orElse(20);
     }
 
     public int getDelaySlot() {
-        return Optional.ofNullable(subButtonSlots.get("delay")).orElse(21);
+        return Optional.ofNullable(buttonSlots.get("delay")).orElse(21);
     }
 
     public int getExpiresSlot() {
-        return Optional.ofNullable(subButtonSlots.get("expires")).orElse(27);
+        return Optional.ofNullable(buttonSlots.get("expires")).orElse(27);
     }
 
     public int getExpiryTimeSlot() {
-        return Optional.ofNullable(subButtonSlots.get("expiry-time")).orElse(28);
+        return Optional.ofNullable(buttonSlots.get("expiry-time")).orElse(28);
     }
 
     public int getPerPlayerLimitSlot() {
-        return Optional.ofNullable(subButtonSlots.get("per-player-limit")).orElse(29);
+        return Optional.ofNullable(buttonSlots.get("per-player-limit")).orElse(29);
     }
 
     public int getLimitAmountSlot() {
-        return Optional.ofNullable(subButtonSlots.get("limit-amount")).orElse(30);
+        return Optional.ofNullable(buttonSlots.get("limit-amount")).orElse(30);
     }
 
     public int getMinPlayersSlot() {
-        return Optional.ofNullable(subButtonSlots.get("min-players")).orElse(45);
+        return Optional.ofNullable(buttonSlots.get("min-players")).orElse(45);
     }
 
     public int getSoundTypeSlot() {
-        return Optional.ofNullable(subButtonSlots.get("sound-type")).orElse(46);
+        return Optional.ofNullable(buttonSlots.get("sound-type")).orElse(46);
     }
 
     public int getBroadcastSlot() {
-        return Optional.ofNullable(subButtonSlots.get("broadcast")).orElse(47);
+        return Optional.ofNullable(buttonSlots.get("broadcast")).orElse(47);
     }
 
     public int getPerItemMessageSlot() {
-        return Optional.ofNullable(subButtonSlots.get("per-item-message")).orElse(48);
+        return Optional.ofNullable(buttonSlots.get("per-item-message")).orElse(48);
     }
 
     public int getSaveSlot() {
-        return Optional.ofNullable(subButtonSlots.get("save")).orElse(52);
+        return Optional.ofNullable(buttonSlots.get("save")).orElse(52);
     }
 
     public int getSummarySlot() {
-        return Optional.ofNullable(subButtonSlots.get("summary")).orElse(51);
+        return Optional.ofNullable(buttonSlots.get("summary")).orElse(51);
     }
 }
