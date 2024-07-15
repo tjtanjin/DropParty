@@ -51,7 +51,14 @@ public class SetDisplayNameCommand {
             return true;
         }
 
-        String displayName = args[2];
+        StringBuilder displayNameBuilder = new StringBuilder();
+        for (int i = 2; i < args.length; i++) {
+            displayNameBuilder.append(args[i]);
+            if (i < args.length - 1) {
+                displayNameBuilder.append(" ");
+            }
+        }
+        String displayName = displayNameBuilder.toString();
         boolean success = main.getPartyManager().setPartyDisplayName(partyName, displayName);
         if (success) {
             MessageManager.sendMessage(sender, "set-display-name-success",
